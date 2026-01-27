@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-class Form;
+class AForm;
 
 class Bureaucrat {
     private:
@@ -21,8 +21,9 @@ class Bureaucrat {
         
         void incrementBureaucrat();
         void decrementBureaucrat();
-        void signForm(const Form &form);
-
+        void signForm(const AForm &form);
+        void executeForm(AForm const & form);
+        
         class GradeTooHighException: public std::exception {
             const char *what() const throw();
         };

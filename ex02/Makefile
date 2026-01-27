@@ -2,7 +2,7 @@ pro = bureaucratAndForm
 com = c++
 flages = -Wall -Wextra -Werror -std=c++98
 
-src = main.cpp Bureaucrat.cpp Form.cpp
+src = main.cpp Bureaucrat.cpp AForm.cpp  PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 obj = $(src:.cpp=.o)
 
 all: $(pro)

@@ -1,24 +1,17 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
 	try
 	{
-		Bureaucrat a("Khaled" ,1);
-		Form b("form_b" , 15, 20);
-		Form c("form_c" , 5, 25);
-		std::cout << b << std::endl;
-		std::cout << c << std::endl;
-		b.beSigned(a);
-		a.signForm(b);
-		for (size_t i = 0; i < 6; i++)
-		{
-			std::cout << a << std::endl;
-			a.decrementBureaucrat();
-		}
-		c.beSigned(a);
-		a.signForm(c);
+		Bureaucrat a("Khaled" ,15);
+		AForm *d = new PresidentialPardonForm("home");
+		std::cout << a << std::endl;
+		std::cout << *d << std::endl;
+
 	}
 	catch (std::exception& e)
 	{
