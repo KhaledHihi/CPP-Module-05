@@ -2,15 +2,20 @@
 
 int main()
 {
-	try
-	{
-		Bureaucrat a("Khaled" ,150);
-		a.incrementBureaucrat();
-		std::cout << a << std::endl;
-	}
-	catch (std::exception& e)
+    try
     {
-        std::cout << "throw: " << e.what() << std::endl;
+        Bureaucrat a("Khaled", 2);
+        std::cout << a << std::endl;
+
+        a.incrementBureaucrat();
+        std::cout << a << std::endl;
+
+        a.incrementBureaucrat();
     }
-	return 0;
+    catch (std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+
+    return 0;
 }

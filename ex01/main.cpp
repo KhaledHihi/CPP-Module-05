@@ -3,26 +3,29 @@
 
 int main()
 {
-	try
-	{
-		Bureaucrat a("Khaled" ,1);
-		Form b("form_b" , 15, 20);
-		Form c("form_c" , 5, 25);
-		std::cout << b << std::endl;
-		std::cout << c << std::endl;
-		b.beSigned(a);
-		a.signForm(b);
-		for (size_t i = 0; i < 6; i++)
-		{
-			std::cout << a << std::endl;
-			a.decrementBureaucrat();
-		}
-		c.beSigned(a);
-		a.signForm(c);
-	}
-	catch (std::exception& e)
-	{
-		std::cout << "throw: " << e.what() << std::endl;
-	}
-	return 0;
+    try
+    {
+        Bureaucrat bob("Bob", 10);
+        Bureaucrat jim("Jim", 100);
+
+        Form tax("TaxForm", 50, 25);
+        Form secret("SecretForm", 5, 2);
+
+        std::cout << bob << std::endl;
+        std::cout << jim << std::endl;
+        std::cout << tax << std::endl;
+        std::cout << secret << std::endl;
+
+        bob.signForm(tax);
+        jim.signForm(tax);
+        bob.signForm(secret);
+
+        std::cout << tax << std::endl;
+        std::cout << secret << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+    return 0;
 }
