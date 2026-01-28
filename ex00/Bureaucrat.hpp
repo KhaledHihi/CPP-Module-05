@@ -5,17 +5,17 @@
 class Bureaucrat {
     private:
         const std::string name;
-        unsigned int grade;
+        int grade;
 
     public:
         Bureaucrat();
-        Bureaucrat(const std::string &name, const unsigned int &grade);
+        Bureaucrat(const std::string &name, const int &grade);
         Bureaucrat(const Bureaucrat &other);
         Bureaucrat &operator=(const Bureaucrat &other);
         ~Bureaucrat();
 
         std::string getName() const;
-        unsigned int getGrade() const;
+        int getGrade() const;
         
         void incrementBureaucrat();
         void decrementBureaucrat();
