@@ -54,6 +54,7 @@ void AForm::beSigned(const Bureaucrat &bureaucrat){
     if (bureaucrat.getGrade() > getGradeSign()){
         throw AForm::GradeTooLowException();
     }
+
     this->isSigned = true;
 }
 
@@ -65,7 +66,6 @@ const char *AForm::GradeTooLowException::what() const throw() {
     return "AForm grade is too low!";
 }
 
-// * Insertion operator
 std::ostream &operator<<(std::ostream &output, const AForm &other){
     return output << other.getName() << ", signed: "
            << (other.getIsSigned() ? "yes" : "no" ) << ", sign grade: " 
