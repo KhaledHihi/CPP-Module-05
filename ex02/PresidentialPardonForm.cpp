@@ -19,7 +19,7 @@ std::string PresidentialPardonForm::getTarget() const{ return target;}
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const{
     if (!getIsSigned()){
-        throw GradeTooLowException();
+        throw AForm::GradeTooLowException();
     }
 	if(executor.getGrade() > getGradeExecute())
 		throw AForm::GradeTooLowException();

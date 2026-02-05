@@ -21,11 +21,11 @@ std::string RobotomyRequestForm::getTarget() const{ return target;}
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
     if (!getIsSigned()){
-        throw GradeTooLowException();
+        throw AForm::GradeTooLowException();
     }
     
     if (executor.getGrade() > getGradeExecute()){
-        throw GradeTooLowException();
+        throw AForm::GradeTooLowException();
     }
 
     std::cout << "*drilling noises*" << std::endl;

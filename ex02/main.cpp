@@ -11,7 +11,7 @@ int main()
 		AForm *d = new PresidentialPardonForm("home");
 		std::cout << a << std::endl;
 		std::cout << *d << std::endl;
-
+		delete d;
 	}
 	catch (std::exception& e)
 	{

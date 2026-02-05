@@ -21,11 +21,11 @@ std::string ShrubberyCreationForm::getTarget() const{ return target;}
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
     if (!getIsSigned()){
-        throw GradeTooLowException();
+        throw AForm::GradeTooLowException();
     }
     
     if (executor.getGrade() > getGradeExecute()){
-        throw GradeTooLowException();
+        throw AForm::GradeTooLowException();
     }
 
     std::string fileName = getTarget() + "_shrubbery";
