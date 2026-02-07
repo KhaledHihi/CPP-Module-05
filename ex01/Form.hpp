@@ -1,4 +1,5 @@
-#pragma once
+#ifndef FORM_HPP
+#define FORM_HPP
 
 #include <iostream>
 #include <string>
@@ -37,3 +38,5 @@ class Form {
 };
 
 std::ostream &operator<<(std::ostream &output, const Form &other);
+
+#endif

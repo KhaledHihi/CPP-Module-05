@@ -18,7 +18,6 @@ Bureaucrat::Bureaucrat(const std::string &name, const unsigned int &grade): name
     std::cout << "Parametrised constructor of Bureaucrat is called" << std::endl;
 }
 
-// * Copy constructor with initializer list
 Bureaucrat::Bureaucrat(const Bureaucrat &other): name(other.name), grade(other.grade){
     std::cout << "Copy constructor of Bureaucrat is called" << std::endl;
 }
@@ -58,11 +57,13 @@ void Bureaucrat::decrementBureaucrat(){
     this->grade++;
 }
 
-void Bureaucrat::signForm(const AForm &form){
-    if (form.getIsSigned()){
+void Bureaucrat::signForm(AForm &form){
+    try {
+        form.beSigned(*this);
         std::cout << getName() << " signed " << form.getName() << std::endl;
-    } else {
-        std::cout << getName() << " couldn’t sign " << form.getName() << " because " << "The Grade of Bureaucrat is Lower" << std::endl;
+    } catch (std::exception &e) {
+        std::cout << getName() << " couldn't sign " << form.getName() 
+                  << " because " << e.what() << std::endl;
     }
 }
 

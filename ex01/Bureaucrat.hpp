@@ -1,4 +1,5 @@
-#pragma once
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 
 #include <iostream>
 #include <string>
@@ -36,3 +37,5 @@ class Bureaucrat {
 };
 
 std::ostream &operator<<(std::ostream &output, const Bureaucrat &other);
+
+#endif

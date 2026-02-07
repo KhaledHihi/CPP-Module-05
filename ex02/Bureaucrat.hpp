@@ -1,4 +1,5 @@
-#pragma once
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 
 #include <iostream>
 
@@ -21,7 +22,7 @@ class Bureaucrat {
         
         void incrementBureaucrat();
         void decrementBureaucrat();
-        void signForm(const AForm &form);
+        void signForm(AForm &form);
         void executeForm(AForm const & form);
         
         class GradeTooHighException: public std::exception {
@@ -33,3 +34,5 @@ class Bureaucrat {
 };
 
 std::ostream &operator<<(std::ostream &output, const Bureaucrat &other);
+
+#endif

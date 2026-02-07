@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ROBOTOMYREQUESTFORM_HPP
+#define ROBOTOMYREQUESTFORM_HPP
 
 #include "AForm.hpp"
 #include <stdlib.h>
@@ -17,3 +18,4 @@ class RobotomyRequestForm: public AForm
 		std::string getTarget() const;
 		void	execute(Bureaucrat const & executor) const;
 };
+#endif

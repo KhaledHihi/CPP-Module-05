@@ -65,7 +65,6 @@ const char *Form::GradeTooLowException::what() const throw() {
     return "Form grade is too low!";
 }
 
-// * Insertion operator
 std::ostream &operator<<(std::ostream &output, const Form &other){
     return output << other.getName() << ", signed: "
            << (other.getIsSigned() ? "yes" : "no" ) << ", sign grade: " 
